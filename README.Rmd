@@ -14,36 +14,24 @@ knitr::opts_chunk$set(
 ```
 # mizzourahmd
 
-The goal of mizzourahmd is to ...
+The goal of mizzourahmd is to provide a clean and pretty rmarkdown template (I 
+don't like any of the default themes).
 
 ## Installation
 
-You can install the released version of mizzourahmd from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of mizzourahmd Github with:
 
 ``` r
-install.packages("mizzourahmd")
+## install from github
+remotes::install_github("mkearney/mizzourahmd")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+Here are a couple screen shots of the output:
 
-```{r example}
-## basic example code
-```
+<p style="align:center"><img src="tools/readme/ex1-shadow.png"></img></p>
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r cars}
-summary(cars)
-```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+<p style="align:center"><img src="tools/readme/ex2-shadow.png"></img></p>
