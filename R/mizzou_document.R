@@ -30,5 +30,6 @@ mizzou_document <- function (fig_width = 8, fig_height = 6,
       fig_height = fig_height, dev = dev, fig_retina = 2,
 #      section_divs = FALSE, fig_caption = TRUE,
       css = css, theme = "default", highlight = "haddock",
-      self_contained = self_contained, mathjax = mathjax, ...))
+      self_contained = self_contained, mathjax = mathjax,
+      pandoc_args = "--tab-stop=2", ...))
 }
