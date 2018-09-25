@@ -46,6 +46,13 @@ pre {
   line-height: 1.33em;
   font-family: "Fira Code", Consolas, Monaco, Menlo, Inconsolata, monospace;
 }
+div.sourceCode {
+  overflow: visible;
+}
+pre.sourceCode {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 p {
   margin: 1.5em 0;
