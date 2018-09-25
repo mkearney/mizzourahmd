@@ -8,8 +8,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  max-width: 800px;
-  margin: 0 auto 5em auto;
+  max-width: 840px;
+  margin: .5em auto 5em auto;
 }
 
 h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
@@ -22,13 +22,25 @@ h2 {font-size: 2.0em}
 h3 {font-size: 1.5em}
 h4 {font-size: 1.25em}
 
+h4.author, h4.date {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+h4.author em, h4.date em {
+  font-style: normal;
+  font-weight: 400;
+  font-size: .85em;
+  opacity: .6;
+}
+
 code {
   font-family: "Fira Code", Consolas, Monaco, Menlo, Inconsolata, monospace;
 }
 pre {
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 3px 1px, rgba(0, 0, 0, 0.1) 0 1px 3px 1px, rgba(0, 0, 0, 0.2) 0 1px 1px -1px;
   font-size: .75em;
-  width: 95%;
+  width: 90%;
   line-height: 1.33em;
   font-family: "Fira Code", Consolas, Monaco, Menlo, Inconsolata, monospace;
 }
