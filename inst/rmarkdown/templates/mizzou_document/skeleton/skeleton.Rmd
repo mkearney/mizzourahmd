@@ -1,0 +1,12 @@
+---
+title: "Title"
+author: "Author"
+date: "`r Sys.Date()`"
+output: mizzourahmd::mizzou_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, comment = "#>")
+```
+
+

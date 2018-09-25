@@ -1,0 +1,4 @@
+name: Mizzou Markdown (HTML)
+description: >
+  An rmarkdown template with customised HTML output.
+create_dir: false
