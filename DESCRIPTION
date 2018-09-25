@@ -15,3 +15,5 @@ RoxygenNote: 6.1.0.9000
 License: CC0
 Imports: 
     rmarkdown
+URL: https://github.com/mkearney/mizzourahmd
+BugReports: https://github.com/mkearney/mizzourahmd/issues
