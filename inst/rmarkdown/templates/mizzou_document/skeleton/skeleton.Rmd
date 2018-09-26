@@ -9,18 +9,19 @@ output: mizzourahmd::mizzou_document
 knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, comment = "#>")
 ```
 
-This is a reproducible [rmarkdown](https://rmarkdown.rstudio.com) document that 
+This is a reproducible [Rmarkdown](https://rmarkdown.rstudio.com) document that 
 describes a data analysis project. It proceeds in four sections. First, the 
 [setup](#setup) section contains a list of required packages and version 
 numbers. Next, the [data](#data) section provides a description of the 
-information of interest, the analysis of which is then featured in the 
+information of interest, which is then analyzed and reported in the 
 [results](#results) section. Finally, the [discussion](#discussion) section 
 concludes with limitations and broader implications.
 
 ## Setup
 
-All data wrangling and analysis was done in the R environment with the help of 
-the [ggplot2](https://ggplot2.tidyverse.org) and 
+All data wrangling and analysis is done using the 
+[R environment](https://cran.r-project.org) with the help of the 
+[ggplot2](https://ggplot2.tidyverse.org) and 
 [broom](https://cran.r-project.org/package=broom) packages.
 
 ```{r packages}
@@ -29,13 +30,17 @@ if (!requireNamespace("ggplot2", quietly = TRUE)) {
   install.packages("ggplot2")
 }
 
-## load ggplot2 set of packages
+## load ggplot2 and print version number
 library(ggplot2)
+packageVersion("ggplot2")
 
 ## install broom if not already
 if (!requireNamespace("broom", quietly = TRUE)) {
   install.packages("broom")
 }
+
+## print broom's version number (namespace will be explicitly qualified later)
+packageVersion("broom")
 ```
 
 ## Data
@@ -54,7 +59,6 @@ An Ordinary Least Squares (OLS) model was used to estimate highway fuel
 efficiency as a function of engine weight, year, number of cylinders, and 
 vehicle class.
 
-
 ```{r m1}
 ## regression model
 m1 <- lm(hwy ~ displ + year + cyl + class, data = mpg)
@@ -64,7 +68,10 @@ Model fit information is provided below.
 
 ```{r fit}
 ## model fit information
-t(broom::glance(m1))
+data.frame(
+  statistic = row.names(t(broom::glance(m1))), 
+  value = sprintf("%.2f", t(broom::glance(m1))), 
+  row.names = NULL)
 ```
 
 And here are the regression coefficients.
@@ -76,7 +83,6 @@ broom::tidy(m1)
 
 It's clear that vehicle class makes a big difference. A boxplot is provided 
 below to visualize this difference.
-
 
 ```{r boxplot}
 ## plot to visualize relationship between hwy and class
@@ -91,7 +97,6 @@ ggplot(mpg, aes(x = class, y = hwy, fill = class)) +
     title = "Highway fuel efficiency by vehicle class", 
     subtitle = "Jittered points overlaying boxplots of fuel efficiency by class")
 ```
-
 
 ## Discussion
 
