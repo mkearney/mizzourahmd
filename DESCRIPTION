@@ -17,3 +17,6 @@ Imports:
     rmarkdown
 URL: https://github.com/mkearney/mizzourahmd
 BugReports: https://github.com/mkearney/mizzourahmd/issues
+Suggests: 
+    ggplot2,
+    broom

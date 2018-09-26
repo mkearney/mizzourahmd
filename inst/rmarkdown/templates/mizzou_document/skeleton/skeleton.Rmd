@@ -9,4 +9,90 @@ output: mizzourahmd::mizzou_document
 knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, comment = "#>")
 ```
 
+This is a reproducible [rmarkdown](https://rmarkdown.rstudio.com) document that 
+describes a data analysis project. It proceeds in four sections. First, the 
+[setup](#setup) section contains a list of required packages and version 
+numbers. Next, the [data](#data) section provides a description of the 
+information of interest, the analysis of which is then featured in the 
+[results](#results) section. Finally, the [discussion](#discussion) section 
+concludes with limitations and broader implications.
 
+## Setup
+
+All data wrangling and analysis was done in the R environment with the help of 
+the [ggplot2](https://ggplot2.tidyverse.org) and 
+[broom](https://cran.r-project.org/package=broom) packages.
+
+```{r packages}
+## install ggplot2 if not already
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  install.packages("ggplot2")
+}
+
+## load ggplot2 set of packages
+library(ggplot2)
+
+## install broom if not already
+if (!requireNamespace("broom", quietly = TRUE)) {
+  install.packages("broom")
+}
+```
+
+## Data
+
+The data set, `mpg`, comes from the [ggplot2](https://ggplot2.tidyverse.org)
+package.
+
+```{r data}
+## preview data set
+head(mpg)
+```
+
+## Results
+
+An Ordinary Least Squares (OLS) model was used to estimate highway fuel 
+efficiency as a function of engine weight, year, number of cylinders, and 
+vehicle class.
+
+
+```{r m1}
+## regression model
+m1 <- lm(hwy ~ displ + year + cyl + class, data = mpg)
+```
+
+Model fit information is provided below.
+
+```{r fit}
+## model fit information
+t(broom::glance(m1))
+```
+
+And here are the regression coefficients.
+
+```{r}
+## view output
+broom::tidy(m1)
+```
+
+It's clear that vehicle class makes a big difference. A boxplot is provided 
+below to visualize this difference.
+
+
+```{r boxplot}
+## plot to visualize relationship between hwy and class
+ggplot(mpg, aes(x = class, y = hwy, fill = class)) +
+  geom_boxplot(outlier.shape = NA, alpha = .6) + 
+  geom_jitter(shape = 21, size = 2, alpha = .5) + 
+  theme_minimal(base_family = "Roboto Condensed") + 
+  theme(legend.position = "none", 
+    axis.title = element_text(hjust = .95, face = "italic"),
+    plot.title = element_text(face = "bold")) + 
+  labs(x = NULL, y = "Highway Fuel Efficiency", 
+    title = "Highway fuel efficiency by vehicle class", 
+    subtitle = "Jittered points overlaying boxplots of fuel efficiency by class")
+```
+
+
+## Discussion
+
+There are some limitations and notable takeaways too.

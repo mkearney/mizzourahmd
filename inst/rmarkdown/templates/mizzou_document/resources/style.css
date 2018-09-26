@@ -38,9 +38,12 @@ code {
   font-family: "Fira Code", Consolas, Monaco, Menlo, Inconsolata, monospace;
 }
 pre {
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 3px 1px, rgba(0, 0, 0, 0.1) 0 1px 3px 1px, rgba(0, 0, 0, 0.2) 0 1px 1px -1px;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0 2px 3px 1px,
+    rgba(0, 0, 0, 0.1) 0 1px 3px 1px,
+    rgba(0, 0, 0, 0.2) 0 1px 1px -1px;
   font-size: .75em;
-  width: 92%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.33em;
