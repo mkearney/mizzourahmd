@@ -1,20 +1,14 @@
 ---
-title: "TO DO List"
+title: "My 'TO DO' List"
 author: "Author"
 date: "`r Sys.Date()`"
 output: mizzourahmd::todo_document
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, comment = "#>")
-```
-
-This is an [Rmarkdown](https://rmarkdown.rstudio.com) TO-DO list document.
-
 ## Today
-+ Make open source contribution on Github
-+ Install and use a new R package
++ *Make open source contribution on Github*
++ ~Install and use a new R package~
 
 ## Tomorrow
-+ Data analysis project
++ **Data analysis project**
 + Play on Twitter

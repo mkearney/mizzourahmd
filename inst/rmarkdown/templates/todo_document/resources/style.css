@@ -1,7 +1,7 @@
 
 body {
   font-family: Roboto, sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.5;
   font-weight: 400;
   max-width: 840px;
@@ -13,7 +13,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
   font-weight: 900;
 }
 
-h1 {font-size: 2.5em}
+h1 {font-size: 2.5em; display: none;}
 h2 {font-size: 2.0em}
 h3 {font-size: 1.5em}
 h4 {font-size: 1.25em}
@@ -75,5 +75,26 @@ code span.ot, .ot {
 }
 
 s {
-  color: rgba(221, 51, 51, .8);
+  color: rgb(221, 51, 51);
+  color: rgba(221, 51, 51, .9);
+}
+
+.todostrike {
+  color: rgb(25, 25, 25);
+  color: rgba(0, 0, 0, .7);
+}
+
+.todotitle {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.todohlg {
+  background-color: rgb(225, 255, 0);
+  background-color: rgba(225, 255, 0, .65);
+}
+
+.todohlo {
+  background-color: rgb(225, 165, 0);
+  background-color: rgba(225, 165, 0, .65);
 }

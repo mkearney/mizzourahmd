@@ -57,3 +57,22 @@ And plots render nicely as well\!
 <img width="75%" src="tools/readme/ex3-shadow.png">
 
 </p>
+
+## TO DO lists
+
+Create nice-looking TO-DO lists with the `mizzourahmd::todo_document`
+template
+
+<p align="center">
+
+<img width="75%" src="tools/readme/ex4-todormd.png">
+
+</p>
+
+The default template renders HTML that looks like this:
+
+<p align="center">
+
+<img width="75%" src="tools/readme/ex4-todo.png">
+
+</p>
